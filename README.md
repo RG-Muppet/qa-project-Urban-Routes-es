@@ -43,7 +43,7 @@ Este proyecto automatiza el proceso de solicitud de un taxi en la aplicación Ur
 - **call_taxi_now()**: Llama al taxi.
 
 3. **Ejecutar las Pruebas**:
-    - se ejecutaron las pruebas utilizando pytest y definiendo previament
+    - se ejecutaron las pruebas utilizando pytest y definiendo previamente los métodos que utilizarían 
 
 4. **Descripción de las Pruebas**:
    - `test_set_route`: Verifica que las direcciones de origen y destino se establecen correctamente.
