@@ -1,7 +1,6 @@
 import data
 from selenium import webdriver
 from UrbanRoutesPage import UrbanRoutesPage
-import time
 
 
 class TestUrbanRoutes:
