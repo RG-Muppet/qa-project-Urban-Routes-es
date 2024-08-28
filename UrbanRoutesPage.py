@@ -179,8 +179,6 @@ class UrbanRoutesPage:
     def select_manta(self):
         self.driver.find_element(*self.add_manta).click()
 
-    def wait_manta(self):
-        WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(self.manta_ok))
 
     def confirm_manta(self):
         return self.driver.find_element(*self.manta_ok).get_property('checked')
