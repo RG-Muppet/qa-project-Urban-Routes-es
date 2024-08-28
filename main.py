@@ -88,7 +88,7 @@ class TestUrbanRoutes:
     def test_add_manta_panuelos(self):
         routes_page = UrbanRoutesPage(self.driver)
         routes_page.select_manta()
-        print('Se solicitó manta y pañuelos correctamente.')
+        assert routes_page.confirm_manta() is True
 
     # 7 Agregar dos helados
     def test_add_icecream(self):

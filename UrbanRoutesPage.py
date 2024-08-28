@@ -40,6 +40,7 @@ class UrbanRoutesPage:
     add_comment = (By.ID, 'comment')
     #Agregar manta y pañuelos
     add_manta = (By.CSS_SELECTOR, '.slider.round')
+    manta_ok = (By.XPATH, '//*[@id="root"]/div/div[3]/div[3]/div[2]/div[2]/div[4]/div[2]/div[1]/div/div[2]/div/input')
     #Agregar helados
     add_icecream = (By.XPATH, '(//div[@class="counter-plus"][1])')
     no_icecream = (By.XPATH, '(//div[@class="counter-value"][1])')
@@ -176,7 +177,13 @@ class UrbanRoutesPage:
         return self.driver.find_element(*self.add_comment).get_property('value')
 
     def select_manta(self):
-        return self.driver.find_element(*self.add_manta).click()
+        self.driver.find_element(*self.add_manta).click()
+
+    def wait_manta(self):
+        WebDriverWait(self.driver, 3).until(expected_conditions.visibility_of_element_located(self.manta_ok))
+
+    def confirm_manta(self):
+        return self.driver.find_element(*self.manta_ok).get_property('checked')
 
     def add_one_icecream(self):
         return self.driver.find_element(*self.add_icecream).click()
